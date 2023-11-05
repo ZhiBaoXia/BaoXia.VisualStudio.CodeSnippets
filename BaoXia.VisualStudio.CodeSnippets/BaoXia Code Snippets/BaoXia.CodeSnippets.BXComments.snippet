@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+		
+		<CodeSnippet Format="1.0.0">
+				<Header>
+						<Title>宝匣软件 标准注释代码 分隔行</Title>
+						<Author>宝匣软件</Author>
+						<Description>宝匣软件 标准注释代码 分隔行。</Description>
+						<SnippetTypes>
+								<SnippetType>Expansion</SnippetType>
+								<SnippetType>SurroundsWith</SnippetType>
+						</SnippetTypes>
+						<Shortcut>BXCommentsLine</Shortcut>
+				</Header>
+				<Snippet>
+						<Code Language="CSharp">
+								<![CDATA[
+								////////////////////////////////////////////////
+								]]>
+						</Code>
+				</Snippet>
+		</CodeSnippet>
+
+		<CodeSnippet Format="1.0.0">
+				<Header>
+						<Title>宝匣软件 重要区块注释 分隔行</Title>
+						<Author>宝匣软件</Author>
+						<Description>宝匣软件 重要区块注释 重要区块注释，分隔行。</Description>
+						<SnippetTypes>
+								<SnippetType>Expansion</SnippetType>
+								<SnippetType>SurroundsWith</SnippetType>
+						</SnippetTypes>
+						<Shortcut>BXCommentsSectionLine</Shortcut>
+				</Header>
+				<Snippet>
+						<Code Language="CSharp">
+								<![CDATA[
+								////////////////////////////////////////////////
+								// @$SectionName$
+								////////////////////////////////////////////////
+										
+								#region $SectionName$
+								
+								$SectionCode$
+								
+								#endregion
+								
+								]]>
+						</Code>
+						<Declarations>
+								<Literal>
+										<ID>SectionName</ID>
+										<ToolTip>区块名称。</ToolTip>
+										<Default>区块名称。</Default>
+								</Literal>
+								<Literal>
+										<ID>SectionCode</ID>
+										<ToolTip>区块代码。</ToolTip>
+										<Default>区块代码。</Default>
+								</Literal>
+						</Declarations>
+				</Snippet>
+		</CodeSnippet>
+
+		<CodeSnippet Format="1.0.0">
+				<Header>
+						<Title>宝匣软件 标准注释代码 静态常量</Title>
+						<Author>宝匣软件</Author>
+						<Description>宝匣软件 标准注释代码 静态常量。</Description>
+						<SnippetTypes>
+								<SnippetType>Expansion</SnippetType>
+								<SnippetType>SurroundsWith</SnippetType>
+						</SnippetTypes>
+						<Shortcut>BXCommentsConstants</Shortcut>
+				</Header>
+				<Snippet>
+						<Code Language="CSharp">
+								<![CDATA[
+								////////////////////////////////////////////////
+								// @静态常量
+								////////////////////////////////////////////////
+										
+								#region 静态常量
+								
+								$SectionCode$
+								
+								#endregion
+								
+								]]>
+						</Code>
+						<Declarations>
+								<Literal>
+										<ID>SectionCode</ID>
+										<ToolTip>区块代码。</ToolTip>
+										<Default>区块代码。</Default>
+								</Literal>
+						</Declarations>
+				</Snippet>
+		</CodeSnippet>
+
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>宝匣软件 标准注释代码 静态变量</Title>
+			<Author>宝匣软件</Author>
+			<Description>宝匣软件 标准注释代码 静态变量。</Description>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+			<Shortcut>BXCommentsStatics</Shortcut>
+		</Header>
+		<Snippet>
+			<Code Language="CSharp">
+				<![CDATA[
+								////////////////////////////////////////////////
+								// @静态变量
+								////////////////////////////////////////////////
+										
+								#region 静态变量
+								
+								$SectionCode$
+								
+								#endregion
+								
+								]]>
+			</Code>
+			<Declarations>
+				<Literal>
+					<ID>SectionCode</ID>
+					<ToolTip>区块代码。</ToolTip>
+					<Default>区块代码。</Default>
+				</Literal>
+			</Declarations>
+		</Snippet>
+	</CodeSnippet>
+	
+		<CodeSnippet Format="1.0.0">
+				<Header>
+						<Title>宝匣软件 标准注释代码 类方法</Title>
+						<Author>宝匣软件</Author>
+						<Description>宝匣软件 标准注释代码 类方法。</Description>
+						<SnippetTypes>
+								<SnippetType>Expansion</SnippetType>
+								<SnippetType>SurroundsWith</SnippetType>
+						</SnippetTypes>
+						<Shortcut>BXCommentsClassMethods</Shortcut>
+				</Header>
+				<Snippet>
+						<Code Language="CSharp">
+								<![CDATA[
+								////////////////////////////////////////////////
+								// @类方法
+								////////////////////////////////////////////////
+										
+								#region 类方法
+								
+								$SectionCode$
+								
+								#endregion
+								
+								]]>
+						</Code>
+						<Declarations>
+								<Literal>
+										<ID>SectionCode</ID>
+										<ToolTip>区块代码。</ToolTip>
+										<Default>区块代码。</Default>
+								</Literal>
+						</Declarations>
+				</Snippet>
+		</CodeSnippet>
+
+		<CodeSnippet Format="1.0.0">
+				<Header>
+						<Title>宝匣软件 标准注释代码 自身属性</Title>
+						<Author>宝匣软件</Author>
+						<Description>宝匣软件 标准注释代码 自身属性。</Description>
+						<SnippetTypes>
+								<SnippetType>Expansion</SnippetType>
+								<SnippetType>SurroundsWith</SnippetType>
+						</SnippetTypes>
+						<Shortcut>BXCommentsMyProperties</Shortcut>
+				</Header>
+				<Snippet>
+						<Code Language="CSharp">
+								<![CDATA[
+								////////////////////////////////////////////////
+								// @自身属性
+								////////////////////////////////////////////////
+										
+								#region 自身属性
+								
+								$SectionCode$
+								
+								#endregion
+								
+								]]>
+						</Code>
+						<Declarations>
+								<Literal>
+										<ID>SectionCode</ID>
+										<ToolTip>区块代码。</ToolTip>
+										<Default>区块代码。</Default>
+								</Literal>
+						</Declarations>
+				</Snippet>
+		</CodeSnippet>
+
+		<CodeSnippet Format="1.0.0">
+				<Header>
+						<Title>宝匣软件 标准注释代码 自身实现</Title>
+						<Author>宝匣软件</Author>
+						<Description>宝匣软件 标准注释代码 自身实现。</Description>
+						<SnippetTypes>
+								<SnippetType>Expansion</SnippetType>
+								<SnippetType>SurroundsWith</SnippetType>
+						</SnippetTypes>
+						<Shortcut>BXCommentsMyMethods</Shortcut>
+				</Header>
+				<Snippet>
+						<Code Language="CSharp">
+								<![CDATA[
+								////////////////////////////////////////////////
+								// @自身实现
+								////////////////////////////////////////////////
+										
+								#region 自身实现
+								
+								$SectionCode$
+								
+								#endregion
+								
+								]]>
+						</Code>
+						<Declarations>
+								<Literal>
+										<ID>SectionCode</ID>
+										<ToolTip>区块代码。</ToolTip>
+										<Default>区块代码。</Default>
+								</Literal>
+						</Declarations>
+				</Snippet>
+		</CodeSnippet>
+
+		<CodeSnippet Format="1.0.0">
+				<Header>
+						<Title>宝匣软件 标准注释代码 事件节点</Title>
+						<Author>宝匣软件</Author>
+						<Description>宝匣软件 标准注释代码 事件节点。</Description>
+						<SnippetTypes>
+								<SnippetType>Expansion</SnippetType>
+								<SnippetType>SurroundsWith</SnippetType>
+						</SnippetTypes>
+						<Shortcut>BXCommentsMyEventPoints</Shortcut>
+				</Header>
+				<Snippet>
+						<Code Language="CSharp">
+								<![CDATA[
+								////////////////////////////////////////////////
+								// @事件节点
+								////////////////////////////////////////////////
+									
+								#region 事件节点
+								
+								$SectionCode$
+								
+								#endregion
+								
+								]]>
+						</Code>
+						<Declarations>
+								<Literal>
+										<ID>SectionCode</ID>
+										<ToolTip>区块代码。</ToolTip>
+										<Default>区块代码。</Default>
+								</Literal>
+						</Declarations>
+				</Snippet>
+		</CodeSnippet>
+
+		<CodeSnippet Format="1.0.0">
+				<Header>
+						<Title>宝匣软件 标准注释代码 重载</Title>
+						<Author>宝匣软件</Author>
+						<Description>宝匣软件 标准注释代码 重载。</Description>
+						<SnippetTypes>
+								<SnippetType>Expansion</SnippetType>
+								<SnippetType>SurroundsWith</SnippetType>
+						</SnippetTypes>
+						<Shortcut>BXCommentsMyOverrides</Shortcut>
+				</Header>
+				<Snippet>
+						<Code Language="CSharp">
+								<![CDATA[
+								////////////////////////////////////////////////
+								// @重载
+								////////////////////////////////////////////////
+									
+								#region 重载
+								
+								$SectionCode$
+								
+								#endregion
+								
+								]]>
+						</Code>
+						<Declarations>
+								<Literal>
+										<ID>SectionCode</ID>
+										<ToolTip>区块代码。</ToolTip>
+										<Default>区块代码。</Default>
+								</Literal>
+						</Declarations>
+				</Snippet>
+		</CodeSnippet>
+
+		<CodeSnippet Format="1.0.0">
+				<Header>
+						<Title>宝匣软件 标准注释代码 实现接口</Title>
+						<Author>宝匣软件</Author>
+						<Description>宝匣软件 标准注释代码 实现接口。</Description>
+						<SnippetTypes>
+								<SnippetType>Expansion</SnippetType>
+								<SnippetType>SurroundsWith</SnippetType>
+						</SnippetTypes>
+						<Shortcut>BXCommentsMyInterfaceImplementation</Shortcut>
+				</Header>
+				<Snippet>
+						<Code Language="CSharp">
+								<![CDATA[
+								////////////////////////////////////////////////
+                // @实现“$My Interface$”
+                ////////////////////////////////////////////////
+									
+								#region 实现“$My Interface$”
+								
+								$SectionCode$
+								
+								#endregion
+								
+								]]>
+						</Code>
+						<Declarations>
+								<Literal>
+										<ID>My Interface</ID>
+										<ToolTip>接口名称。</ToolTip>
+										<Default>接口名称</Default>
+								</Literal>
+								<Literal>
+										<ID>SectionCode</ID>
+										<ToolTip>区块代码。</ToolTip>
+										<Default>区块代码。</Default>
+								</Literal>
+						</Declarations>
+				</Snippet>
+		</CodeSnippet>
+
+		<CodeSnippet Format="1.0.0">
+				<Header>
+						<Title>宝匣软件 标准注释代码 重要注释信息</Title>
+						<Author>宝匣软件</Author>
+						<Description>宝匣软件 标准注释代码 重要注释信息。</Description>
+						<SnippetTypes>
+								<SnippetType>Expansion</SnippetType>
+								<SnippetType>SurroundsWith</SnippetType>
+						</SnippetTypes>
+						<Shortcut>BXCommentsImportantComment</Shortcut>
+				</Header>
+				<Snippet>
+						<Code Language="CSharp">
+								<![CDATA[// !!! $CommentContent$ !!!]]>
+						</Code>
+						<Declarations>
+								<Literal>
+										<ID>CommentContent</ID>
+										<ToolTip>备注内容。</ToolTip>
+										<Default>备注内容</Default>
+								</Literal>
+						</Declarations>
+				</Snippet>
+		</CodeSnippet>
+
+		<CodeSnippet Format="1.0.0">
+				<Header>
+						<Title>宝匣软件 标准注释代码 重要注释信息2</Title>
+						<Author>宝匣软件</Author>
+						<Description>宝匣软件 标准注释代码 重要注释信息2。</Description>
+						<SnippetTypes>
+								<SnippetType>Expansion</SnippetType>
+								<SnippetType>SurroundsWith</SnippetType>
+						</SnippetTypes>
+						<Shortcut>BXCommentsImportantComment2</Shortcut>
+				</Header>
+				<Snippet>
+						<Code Language="CSharp">
+								<![CDATA[// !!!⚠ $CommentContent$ ⚠!!!]]>
+						</Code>
+						<Declarations>
+								<Literal>
+										<ID>CommentContent</ID>
+										<ToolTip>备注内容。</ToolTip>
+										<Default>备注内容</Default>
+								</Literal>
+						</Declarations>
+				</Snippet>
+		</CodeSnippet>
+		
+</CodeSnippets>

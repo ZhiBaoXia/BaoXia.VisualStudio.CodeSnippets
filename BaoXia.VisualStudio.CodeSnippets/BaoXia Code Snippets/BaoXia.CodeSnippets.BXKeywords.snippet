@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+		<CodeSnippet Format="1.0.0">
+				<Header>
+						<Title>宝匣软件 便捷关键字：nil</Title>
+						<Author>宝匣软件</Author>
+						<Description>“null”常量快捷输入。</Description>
+						<Shortcut>nil</Shortcut>
+				</Header>
+				<Snippet>
+						<Code Language="CSharp">
+								<![CDATA[null]]>
+						</Code>
+				</Snippet>
+		</CodeSnippet>
+
+
+		<CodeSnippet Format="1.0.0">
+				<Header>
+						<Title>宝匣软件 便捷关键字：bxScope</Title>
+						<Author>宝匣软件</Author>
+						<Description>创建“Scope”对象。</Description>
+						<Shortcut>bxScope</Shortcut>
+				</Header>
+				<Snippet>
+						<Code Language="CSharp">
+								<![CDATA[using var scope = BaoXia.Utils.Environment.ApplicationBuilder.ApplicationServices.CreateScope();]]>
+						</Code>
+				</Snippet>
+		</CodeSnippet>
+
+
+		<CodeSnippet Format="1.0.0">
+				<Header>
+						<Title>宝匣软件 便捷关键字：bxScopeDb</Title>
+						<Author>宝匣软件</Author>
+						<Description>使用“Scope”创建数据库上下文的快捷输入。</Description>
+						<Shortcut>bxScopeDb</Shortcut>
+				</Header>
+				<Snippet>
+						<Imports>
+								<Import>
+										<Namespace>
+												Microsoft.Extensions.DependencyInjection
+										</Namespace>
+								</Import>
+						</Imports>
+						<Code Language="CSharp">
+								<![CDATA[using var scope = BaoXia.Utils.Environment.ApplicationBuilder.ApplicationServices.CreateScope();
+				var db = scope.ServiceProvider.GetRequiredService<Data.$Db Context Name$>();]]>
+						</Code>
+						<Declarations>
+								<Literal>
+										<ID>Db Context Name</ID>
+										<ToolTip>数据库上下文名称。</ToolTip>
+										<Default>数据库上下文名称</Default>
+								</Literal>
+						</Declarations>
+				</Snippet>
+		</CodeSnippet>
+</CodeSnippets>
