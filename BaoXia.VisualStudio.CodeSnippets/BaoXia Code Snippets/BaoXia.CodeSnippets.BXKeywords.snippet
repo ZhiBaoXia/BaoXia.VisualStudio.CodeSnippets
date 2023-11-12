@@ -46,8 +46,9 @@
 								</Import>
 						</Imports>
 						<Code Language="CSharp">
-								<![CDATA[using var scope = BaoXia.Utils.Environment.ApplicationBuilder.ApplicationServices.CreateScope();
-				var db = scope.ServiceProvider.GetRequiredService<Data.$Db Context Name$>();]]>
+								<![CDATA[using var scope = BaoXia.Utils.Environment
+                        .CreateSopeToGetServiceRequired<Data.$Db Context Name$>(
+                        out var db);]]>
 						</Code>
 						<Declarations>
 								<Literal>
