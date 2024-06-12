@@ -50,7 +50,7 @@
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Content Include="BaoXia Code Snippets\BaoXia.CodeSnippets.BXKeywords.snippet">
+    <Content Include="BaoXia Code Snippets\BaoXia.CodeSnippets.BxKeywords.snippet">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
@@ -64,16 +64,19 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="BaoXia Code Snippets\BaoXia.CodeSnippets.BXClassSections.snippet">
+    <Content Include="BaoXia Code Snippets\BaoXia.CodeSnippets.BxClassSections.snippet">
       <IncludeInVSIX>true</IncludeInVSIX>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="BaoXia Code Snippets\BaoXia.CodeSnippets.BXComments.snippet">
+    <Content Include="BaoXia Code Snippets\BaoXia.CodeSnippets.BxComments.snippet">
       <IncludeInVSIX>true</IncludeInVSIX>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="BaoXia Code Snippets\BaoXia.CodeSnippets.BXResponses.snippet">
+    <Content Include="BaoXia Code Snippets\BaoXia.CodeSnippets.BxResponses.snippet">
       <IncludeInVSIX>true</IncludeInVSIX>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="BaoXia Code Snippets\BaoXia.CodeSnippets.BxDataUtils.snippet">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="source.extension.vsixmanifest">

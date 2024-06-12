@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>宝匣软件 服务端 数据工具 数据索引</Title>
+			<Author>宝匣软件</Author>
+			<Description>宝匣软件 服务端 数据工具 数据索引。</Description>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+			<Shortcut>BxEntityIndexWith1Key</Shortcut>
+		</Header>
+		<Snippet>
+			<Code Language="CSharp">
+				<![CDATA[protected EntityIndexWith1Key<$EntityType$, $IndexKeyType$> Index_$IndexKeyPropertyName$ = new(
+		(entity) => entity.$IndexKeyPropertyName$);]]>
+			</Code>
+			<Declarations>
+				<Literal>
+					<ID>EntityType</ID>
+					<ToolTip>实体对象类型。</ToolTip>
+					<Default>EntityType。</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyType</ID>
+					<ToolTip>索引字段数据类型。</ToolTip>
+					<Default>索引字段数据类型</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyPropertyName</ID>
+					<ToolTip>索引字段数据名称。</ToolTip>
+					<Default>索引字段数据名称</Default>
+				</Literal>
+			</Declarations>
+		</Snippet>
+	</CodeSnippet>
+
+
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>宝匣软件 服务端 数据工具 数据索引</Title>
+			<Author>宝匣软件</Author>
+			<Description>宝匣软件 服务端 数据工具 数据索引。</Description>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+			<Shortcut>BxEntityIndexWith2Keys</Shortcut>
+		</Header>
+		<Snippet>
+			<Code Language="CSharp">
+				<![CDATA[protected EntityIndexWith2Keys<$EntityType$, $IndexKeyType_1$, $IndexKeyType_2$> Index_$IndexKeyPropertyName_1$_$IndexKeyPropertyName_2$ = new(
+		(entity) => entity.$IndexKeyPropertyName_1$,
+		(entity) => entity.$IndexKeyPropertyName_2$);]]>
+			</Code>
+			<Declarations>
+				<Literal>
+					<ID>EntityType</ID>
+					<ToolTip>实体对象类型。</ToolTip>
+					<Default>EntityType。</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyType_1</ID>
+					<ToolTip>第1个索引字段数据类型。</ToolTip>
+					<Default>第1个索引字段数据类型</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyPropertyName_1</ID>
+					<ToolTip>第1个索引字段数据名称。</ToolTip>
+					<Default>第1个索引字段数据名称</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyType_2</ID>
+					<ToolTip>第2个索引字段数据类型。</ToolTip>
+					<Default>第2个索引字段数据类型</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyPropertyName_2</ID>
+					<ToolTip>第2个索引字段数据名称。</ToolTip>
+					<Default>第2个索引字段数据名称</Default>
+				</Literal>
+			</Declarations>
+		</Snippet>
+	</CodeSnippet>
+
+
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>宝匣软件 服务端 数据工具 数据索引</Title>
+			<Author>宝匣软件</Author>
+			<Description>宝匣软件 服务端 数据工具 数据索引。</Description>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+			<Shortcut>BxEntityIndexWith3Keys</Shortcut>
+		</Header>
+		<Snippet>
+			<Code Language="CSharp">
+				<![CDATA[protected EntityIndexWith3Keys<$EntityType$, $IndexKeyType_1$, $IndexKeyType_2$, $IndexKeyType_3$> Index_$IndexKeyPropertyName_1$_$IndexKeyPropertyName_2$_$IndexKeyPropertyName_3$ = new(
+		(entity) => entity.$IndexKeyPropertyName_1$,
+		(entity) => entity.$IndexKeyPropertyName_2$,
+		(entity) => entity.$IndexKeyPropertyName_3$);]]>
+			</Code>
+			<Declarations>
+				<Literal>
+					<ID>EntityType</ID>
+					<ToolTip>实体对象类型。</ToolTip>
+					<Default>EntityType。</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyType_1</ID>
+					<ToolTip>第1个索引字段数据类型。</ToolTip>
+					<Default>第1个索引字段数据类型</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyPropertyName_1</ID>
+					<ToolTip>第1个索引字段数据名称。</ToolTip>
+					<Default>第1个索引字段数据名称</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyType_2</ID>
+					<ToolTip>第2个索引字段数据类型。</ToolTip>
+					<Default>第2个索引字段数据类型</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyPropertyName_2</ID>
+					<ToolTip>第2个索引字段数据名称。</ToolTip>
+					<Default>第2个索引字段数据名称</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyType_2</ID>
+					<ToolTip>第3个索引字段数据类型。</ToolTip>
+					<Default>第3个索引字段数据类型</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyPropertyName_3</ID>
+					<ToolTip>第3个索引字段数据名称。</ToolTip>
+					<Default>第3个索引字段数据名称</Default>
+				</Literal>
+			</Declarations>
+		</Snippet>
+	</CodeSnippet>
+
+
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>宝匣软件 服务端 数据工具 数据索引</Title>
+			<Author>宝匣软件</Author>
+			<Description>宝匣软件 服务端 数据工具 数据索引。</Description>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+			<Shortcut>BxEntityIndexWith3Keys</Shortcut>
+		</Header>
+		<Snippet>
+			<Code Language="CSharp">
+				<![CDATA[protected EntityIndexWith3Keys<$EntityType$, $IndexKeyType_1$, $IndexKeyType_2$, $IndexKeyType_3$> Index_$IndexKeyPropertyName_1$_$IndexKeyPropertyName_2$_$IndexKeyPropertyName_3$ = new(
+		(entity) => entity.$IndexKeyPropertyName_1$,
+		(entity) => entity.$IndexKeyPropertyName_2$,
+		(entity) => entity.$IndexKeyPropertyName_3$);]]>
+			</Code>
+			<Declarations>
+				<Literal>
+					<ID>EntityType</ID>
+					<ToolTip>实体对象类型。</ToolTip>
+					<Default>EntityType。</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyType_1</ID>
+					<ToolTip>第1个索引字段数据类型。</ToolTip>
+					<Default>第1个索引字段数据类型</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyPropertyName_1</ID>
+					<ToolTip>第1个索引字段数据名称。</ToolTip>
+					<Default>第1个索引字段数据名称</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyType_2</ID>
+					<ToolTip>第2个索引字段数据类型。</ToolTip>
+					<Default>第2个索引字段数据类型</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyPropertyName_2</ID>
+					<ToolTip>第2个索引字段数据名称。</ToolTip>
+					<Default>第2个索引字段数据名称</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyType_2</ID>
+					<ToolTip>第3个索引字段数据类型。</ToolTip>
+					<Default>第3个索引字段数据类型</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyPropertyName_3</ID>
+					<ToolTip>第3个索引字段数据名称。</ToolTip>
+					<Default>第3个索引字段数据名称</Default>
+				</Literal>
+			</Declarations>
+		</Snippet>
+	</CodeSnippet>@last
+	
+</CodeSnippets>
