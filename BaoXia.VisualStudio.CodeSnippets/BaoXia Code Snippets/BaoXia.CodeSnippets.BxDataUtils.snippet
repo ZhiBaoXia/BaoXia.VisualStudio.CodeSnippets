@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+
+	<!-- ****************************************************** -->
+	<!--                        BxEntityIndexWith1Key                         -->
+	<!-- ****************************************************** -->
 	<CodeSnippet Format="1.0.0">
 		<Header>
 			<Title>宝匣软件 服务端 数据工具 数据索引</Title>
@@ -20,7 +24,7 @@
 				<Literal>
 					<ID>EntityType</ID>
 					<ToolTip>实体对象类型。</ToolTip>
-					<Default>EntityType。</Default>
+					<Default>EntityType</Default>
 				</Literal>
 				<Literal>
 					<ID>IndexKeyType</ID>
@@ -37,6 +41,9 @@
 	</CodeSnippet>
 
 
+	<!-- ****************************************************** -->
+	<!--                       BxEntityIndexWith2Keys                        -->
+	<!-- ****************************************************** -->
 	<CodeSnippet Format="1.0.0">
 		<Header>
 			<Title>宝匣软件 服务端 数据工具 数据索引</Title>
@@ -58,7 +65,7 @@
 				<Literal>
 					<ID>EntityType</ID>
 					<ToolTip>实体对象类型。</ToolTip>
-					<Default>EntityType。</Default>
+					<Default>EntityType</Default>
 				</Literal>
 				<Literal>
 					<ID>IndexKeyType_1</ID>
@@ -85,6 +92,9 @@
 	</CodeSnippet>
 
 
+	<!-- ****************************************************** -->
+	<!--                       BxEntityIndexWith3Keys                        -->
+	<!-- ****************************************************** -->
 	<CodeSnippet Format="1.0.0">
 		<Header>
 			<Title>宝匣软件 服务端 数据工具 数据索引</Title>
@@ -107,7 +117,7 @@
 				<Literal>
 					<ID>EntityType</ID>
 					<ToolTip>实体对象类型。</ToolTip>
-					<Default>EntityType。</Default>
+					<Default>EntityType</Default>
 				</Literal>
 				<Literal>
 					<ID>IndexKeyType_1</ID>
@@ -144,6 +154,9 @@
 	</CodeSnippet>
 
 
+	<!-- ****************************************************** -->
+	<!--                       BxEntityIndexWith4Keys                        -->
+	<!-- ****************************************************** -->
 	<CodeSnippet Format="1.0.0">
 		<Header>
 			<Title>宝匣软件 服务端 数据工具 数据索引</Title>
@@ -153,20 +166,21 @@
 				<SnippetType>Expansion</SnippetType>
 				<SnippetType>SurroundsWith</SnippetType>
 			</SnippetTypes>
-			<Shortcut>BxEntityIndexWith3Keys</Shortcut>
+			<Shortcut>BxEntityIndexWith4Keys</Shortcut>
 		</Header>
 		<Snippet>
 			<Code Language="CSharp">
-				<![CDATA[protected EntityIndexWith3Keys<$EntityType$, $IndexKeyType_1$, $IndexKeyType_2$, $IndexKeyType_3$> Index_$IndexKeyPropertyName_1$_$IndexKeyPropertyName_2$_$IndexKeyPropertyName_3$ = new(
+				<![CDATA[protected EntityIndexWith4Keys<$EntityType$, $IndexKeyType_1$, $IndexKeyType_2$, $IndexKeyType_3$, $IndexKeyType_4$> Index_$IndexKeyPropertyName_1$_$IndexKeyPropertyName_2$_$IndexKeyPropertyName_3$_$IndexKeyPropertyName_4$ = new(
 		(entity) => entity.$IndexKeyPropertyName_1$,
 		(entity) => entity.$IndexKeyPropertyName_2$,
-		(entity) => entity.$IndexKeyPropertyName_3$);]]>
+		(entity) => entity.$IndexKeyPropertyName_3$,
+		(entity) => entity.$IndexKeyPropertyName_4$);]]>
 			</Code>
 			<Declarations>
 				<Literal>
 					<ID>EntityType</ID>
 					<ToolTip>实体对象类型。</ToolTip>
-					<Default>EntityType。</Default>
+					<Default>EntityType</Default>
 				</Literal>
 				<Literal>
 					<ID>IndexKeyType_1</ID>
@@ -189,7 +203,7 @@
 					<Default>第2个索引字段数据名称</Default>
 				</Literal>
 				<Literal>
-					<ID>IndexKeyType_2</ID>
+					<ID>IndexKeyType_3</ID>
 					<ToolTip>第3个索引字段数据类型。</ToolTip>
 					<Default>第3个索引字段数据类型</Default>
 				</Literal>
@@ -198,8 +212,103 @@
 					<ToolTip>第3个索引字段数据名称。</ToolTip>
 					<Default>第3个索引字段数据名称</Default>
 				</Literal>
+				<Literal>
+					<ID>IndexKeyType_4</ID>
+					<ToolTip>第4个索引字段数据类型。</ToolTip>
+					<Default>第4个索引字段数据类型</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyPropertyName_4</ID>
+					<ToolTip>第4个索引字段数据名称。</ToolTip>
+					<Default>第4个索引字段数据名称</Default>
+				</Literal>
 			</Declarations>
 		</Snippet>
-	</CodeSnippet>@last
+	</CodeSnippet>
+
+
+	<!-- ****************************************************** -->
+	<!--                       BxEntityIndexWith5Keys                        -->
+	<!-- ****************************************************** -->
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>宝匣软件 服务端 数据工具 数据索引</Title>
+			<Author>宝匣软件</Author>
+			<Description>宝匣软件 服务端 数据工具 数据索引。</Description>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+			<Shortcut>BxEntityIndexWith5Keys</Shortcut>
+		</Header>
+		<Snippet>
+			<Code Language="CSharp">
+				<![CDATA[protected EntityIndexWith5Keys<$EntityType$, $IndexKeyType_1$, $IndexKeyType_2$, $IndexKeyType_3$, $IndexKeyType_4$, $IndexKeyType_5$> Index_$IndexKeyPropertyName_1$_$IndexKeyPropertyName_2$_$IndexKeyPropertyName_3$_$IndexKeyPropertyName_4$_$IndexKeyPropertyName_5$ = new(
+		(entity) => entity.$IndexKeyPropertyName_1$,
+		(entity) => entity.$IndexKeyPropertyName_2$,
+		(entity) => entity.$IndexKeyPropertyName_3$,
+		(entity) => entity.$IndexKeyPropertyName_4$,
+		(entity) => entity.$IndexKeyPropertyName_5$);]]>
+			</Code>
+			<Declarations>
+				<Literal>
+					<ID>EntityType</ID>
+					<ToolTip>实体对象类型。</ToolTip>
+					<Default>EntityType</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyType_1</ID>
+					<ToolTip>第1个索引字段数据类型。</ToolTip>
+					<Default>第1个索引字段数据类型</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyPropertyName_1</ID>
+					<ToolTip>第1个索引字段数据名称。</ToolTip>
+					<Default>第1个索引字段数据名称</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyType_2</ID>
+					<ToolTip>第2个索引字段数据类型。</ToolTip>
+					<Default>第2个索引字段数据类型</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyPropertyName_2</ID>
+					<ToolTip>第2个索引字段数据名称。</ToolTip>
+					<Default>第2个索引字段数据名称</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyType_3</ID>
+					<ToolTip>第3个索引字段数据类型。</ToolTip>
+					<Default>第3个索引字段数据类型</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyPropertyName_3</ID>
+					<ToolTip>第3个索引字段数据名称。</ToolTip>
+					<Default>第3个索引字段数据名称</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyType_4</ID>
+					<ToolTip>第4个索引字段数据类型。</ToolTip>
+					<Default>第4个索引字段数据类型</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyPropertyName_4</ID>
+					<ToolTip>第4个索引字段数据名称。</ToolTip>
+					<Default>第4个索引字段数据名称</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyType_5</ID>
+					<ToolTip>第5个索引字段数据类型。</ToolTip>
+					<Default>第5个索引字段数据类型</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyPropertyName_5</ID>
+					<ToolTip>第5个索引字段数据名称。</ToolTip>
+					<Default>第5个索引字段数据名称</Default>
+				</Literal>
+			</Declarations>
+		</Snippet>
+	</CodeSnippet>
+	
 	
 </CodeSnippets>
