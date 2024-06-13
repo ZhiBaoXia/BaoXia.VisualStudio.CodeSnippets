@@ -1,0 +1,832 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+
+	<!-- ****************************************************** -->
+	<!--                          数据内存缓存服务                          -->
+	<!-- ****************************************************** -->
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>宝匣软件 数据内存缓存服务</Title>
+			<Author>宝匣软件</Author>
+			<Description>宝匣软件 数据内存缓存服务。</Description>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+			<Shortcut>BxEntityService</Shortcut>
+		</Header>
+		<Snippet>
+			<Code Language="CSharp">
+				<![CDATA[[Service]
+public class $EntityType$Service()
+    : DbSetMemoryCacheServiceWithIntId
+    <$EntityType$>
+    (db => db.$EntityType$s)
+{
+}]]>
+			</Code>
+			<Declarations>
+				<Literal>
+					<ID>EntityType</ID>
+					<ToolTip>实体对象类型。</ToolTip>
+					<Default>EntityType</Default>
+				</Literal>
+			</Declarations>
+		</Snippet>
+	</CodeSnippet>
+
+
+	<!-- ****************************************************** -->
+	<!--                          数据内存管理服务                          -->
+	<!-- ****************************************************** -->
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>宝匣软件 数据内存缓存管理服务</Title>
+			<Author>宝匣软件</Author>
+			<Description>宝匣软件 数据内存缓存管理服务。</Description>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+			<Shortcut>BxMemoryCacheManageInfoService</Shortcut>
+		</Header>
+		<Snippet>
+			<Code Language="CSharp">
+				<![CDATA[[Service]
+public class DbSetMemoryCacheManageInfoService
+    : DbSetMemoryCacheManageInfoServiceWithIntId
+    <$DbContextType$>
+{
+	////////////////////////////////////////////////
+	// @实现“DbSetMemoryCacheManageInfoServiceWithIntId”
+	////////////////////////////////////////////////
+
+	#region 实现“DbSetMemoryCacheManageInfoServiceWithIntId”
+
+	protected override DbSetMemoryCacheServiceConfig DidGetServiceConfig()
+	{
+		return $DbSetMemoryCacheServiceConfigType$.Shared;
+	}
+
+	protected override DbSet<DbSetMemoryCacheManageInfoWithIntId> DidGetEntitySet($DbContextType$ db)
+	{
+		return db.__DbSetMemoryCacheManageInfes;
+	}
+
+	#endregion
+}]]>
+			</Code>
+			<Declarations>
+				<Literal>
+					<ID>DbSetMemoryCacheServiceConfigType</ID>
+					<ToolTip>内存缓存服务配置类。</ToolTip>
+					<Default>DbSetMemoryCacheServiceConfigType</Default>
+				</Literal>
+				<Literal>
+					<ID>DbContextType</ID>
+					<ToolTip>数据库上下文类型。</ToolTip>
+					<Default>DbContextType</Default>
+				</Literal>
+			</Declarations>
+		</Snippet>
+	</CodeSnippet>
+
+
+
+	<!-- ****************************************************** -->
+	<!--                      数据内存缓存服务基类                       -->
+	<!-- ****************************************************** -->
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>宝匣软件 数据内存缓存服务基类</Title>
+			<Author>宝匣软件</Author>
+			<Description>宝匣软件 数据内存缓存服务基类。</Description>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+			<Shortcut>BxMemoryCacheServiceBaseWithIntId</Shortcut>
+		</Header>
+		<Snippet>
+			<Code Language="CSharp">
+				<![CDATA[public abstract class DbSetMemoryCacheServiceWithIntId
+	<$EntityType$>
+	(Func<$DbContextType$, DbSet<$EntityType$>> toGetEntitySetInDb)
+	: DbSetMemoryCacheServiceWithIntId<
+		// 数据库上下文类型：
+		$DbContextType$,
+		// 数据实体类型：
+		$EntityType$>
+	(BaoXia.Utils.Environment.GetService<DbSetMemoryCacheManageInfoService>()!)
+	where $EntityType$ : ModelWithBaseFields<int>, new()
+{
+	////////////////////////////////////////////////
+	// @自身实现
+	////////////////////////////////////////////////
+
+	#region 自身实现
+
+	//public DbSetMemoryCacheServiceWithIntId() 
+	//	: base()
+	//{ }
+
+	#endregion
+
+
+	////////////////////////////////////////////////
+	// @实现“IDbSetMemoryCacheServiceWithIntId”
+	////////////////////////////////////////////////
+
+	#region 实现“IDbSetMemoryCacheServiceWithIntId”
+
+	protected override DbSetMemoryCacheServiceConfig DidGetServiceConfig()
+	{
+		return $DbSetMemoryCacheServiceConfigType$.Shared;
+	}
+
+	protected override DbSet<$EntityType$> DidGetEntitySet($DbContextType$ db)
+	{
+		return toGetEntitySetInDb(db);
+	}
+
+
+	#endregion
+}]]>
+			</Code>
+			<Declarations>
+				<Literal>
+					<ID>DbContextType</ID>
+					<ToolTip>数据库上下文类型。</ToolTip>
+					<Default>DbContextType</Default>
+				</Literal>
+				<Literal>
+					<ID>EntityType</ID>
+					<ToolTip>实体对象类型。</ToolTip>
+					<Default>EntityType</Default>
+				</Literal>
+				<Literal>
+					<ID>DbSetMemoryCacheServiceConfigType</ID>
+					<ToolTip>内存缓存服务配置类。</ToolTip>
+					<Default>DbSetMemoryCacheServiceConfigType</Default>
+				</Literal>
+			</Declarations>
+		</Snippet>
+	</CodeSnippet>
+	
+	
+	<!-- ****************************************************** -->
+	<!--                      数据唯一索引（1字段）                      -->
+	<!-- ****************************************************** -->
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>宝匣软件 服务端 数据工具 数据唯一索引（1字段）</Title>
+			<Author>宝匣软件</Author>
+			<Description>宝匣软件 服务端 数据工具 数据索引。</Description>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+			<Shortcut>BxEntityIndexWith1Key</Shortcut>
+		</Header>
+		<Snippet>
+			<Code Language="CSharp">
+				<![CDATA[protected EntityIndexWith1Key<$EntityType$, $IndexKeyType_1$> Index_$IndexKeyPropertyName_1$ = new(
+		(entity) => entity.$IndexKeyPropertyName_1$);]]>
+			</Code>
+			<Declarations>
+				<Literal>
+					<ID>EntityType</ID>
+					<ToolTip>实体对象类型。</ToolTip>
+					<Default>EntityType</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyType_1</ID>
+					<ToolTip>索引字段数据类型。</ToolTip>
+					<Default>索引字段数据类型</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyPropertyName_1</ID>
+					<ToolTip>索引字段数据名称。</ToolTip>
+					<Default>索引字段数据名称</Default>
+				</Literal>
+			</Declarations>
+		</Snippet>
+	</CodeSnippet>
+
+
+	<!-- ****************************************************** -->
+	<!--                      数据唯一索引（2字段）                      -->
+	<!-- ****************************************************** -->
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>宝匣软件 服务端 数据工具 数据唯一索引（2字段）</Title>
+			<Author>宝匣软件</Author>
+			<Description>宝匣软件 服务端 数据工具 数据索引。</Description>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+			<Shortcut>BxEntityIndexWith2Keys</Shortcut>
+		</Header>
+		<Snippet>
+			<Code Language="CSharp">
+				<![CDATA[protected EntityIndexWith2Keys<$EntityType$, $IndexKeyType_1$, $IndexKeyType_2$> Index_$IndexKeyPropertyName_1$_$IndexKeyPropertyName_2$ = new(
+		(entity) => entity.$IndexKeyPropertyName_1$,
+		(entity) => entity.$IndexKeyPropertyName_2$);]]>
+			</Code>
+			<Declarations>
+				<Literal>
+					<ID>EntityType</ID>
+					<ToolTip>实体对象类型。</ToolTip>
+					<Default>EntityType</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyType_1</ID>
+					<ToolTip>第1个索引字段数据类型。</ToolTip>
+					<Default>第1个索引字段数据类型</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyPropertyName_1</ID>
+					<ToolTip>第1个索引字段数据名称。</ToolTip>
+					<Default>第1个索引字段数据名称</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyType_2</ID>
+					<ToolTip>第2个索引字段数据类型。</ToolTip>
+					<Default>第2个索引字段数据类型</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyPropertyName_2</ID>
+					<ToolTip>第2个索引字段数据名称。</ToolTip>
+					<Default>第2个索引字段数据名称</Default>
+				</Literal>
+			</Declarations>
+		</Snippet>
+	</CodeSnippet>
+
+
+	<!-- ****************************************************** -->
+	<!--                      数据唯一索引（3字段）                      -->
+	<!-- ****************************************************** -->
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>宝匣软件 服务端 数据工具 数据唯一索引（3字段）</Title>
+			<Author>宝匣软件</Author>
+			<Description>宝匣软件 服务端 数据工具 数据索引。</Description>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+			<Shortcut>BxEntityIndexWith3Keys</Shortcut>
+		</Header>
+		<Snippet>
+			<Code Language="CSharp">
+				<![CDATA[protected EntityIndexWith3Keys<$EntityType$, $IndexKeyType_1$, $IndexKeyType_2$, $IndexKeyType_3$> Index_$IndexKeyPropertyName_1$_$IndexKeyPropertyName_2$_$IndexKeyPropertyName_3$ = new(
+		(entity) => entity.$IndexKeyPropertyName_1$,
+		(entity) => entity.$IndexKeyPropertyName_2$,
+		(entity) => entity.$IndexKeyPropertyName_3$);]]>
+			</Code>
+			<Declarations>
+				<Literal>
+					<ID>EntityType</ID>
+					<ToolTip>实体对象类型。</ToolTip>
+					<Default>EntityType</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyType_1</ID>
+					<ToolTip>第1个索引字段数据类型。</ToolTip>
+					<Default>第1个索引字段数据类型</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyPropertyName_1</ID>
+					<ToolTip>第1个索引字段数据名称。</ToolTip>
+					<Default>第1个索引字段数据名称</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyType_2</ID>
+					<ToolTip>第2个索引字段数据类型。</ToolTip>
+					<Default>第2个索引字段数据类型</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyPropertyName_2</ID>
+					<ToolTip>第2个索引字段数据名称。</ToolTip>
+					<Default>第2个索引字段数据名称</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyType_3</ID>
+					<ToolTip>第3个索引字段数据类型。</ToolTip>
+					<Default>第3个索引字段数据类型</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyPropertyName_3</ID>
+					<ToolTip>第3个索引字段数据名称。</ToolTip>
+					<Default>第3个索引字段数据名称</Default>
+				</Literal>
+			</Declarations>
+		</Snippet>
+	</CodeSnippet>
+
+
+	<!-- ****************************************************** -->
+	<!--                      数据唯一索引（4字段）                      -->
+	<!-- ****************************************************** -->
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>宝匣软件 服务端 数据工具 数据唯一索引（4字段）</Title>
+			<Author>宝匣软件</Author>
+			<Description>宝匣软件 服务端 数据工具 数据索引。</Description>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+			<Shortcut>BxEntityIndexWith4Keys</Shortcut>
+		</Header>
+		<Snippet>
+			<Code Language="CSharp">
+				<![CDATA[protected EntityIndexWith4Keys<$EntityType$, $IndexKeyType_1$, $IndexKeyType_2$, $IndexKeyType_3$, $IndexKeyType_4$> Index_$IndexKeyPropertyName_1$_$IndexKeyPropertyName_2$_$IndexKeyPropertyName_3$_$IndexKeyPropertyName_4$ = new(
+		(entity) => entity.$IndexKeyPropertyName_1$,
+		(entity) => entity.$IndexKeyPropertyName_2$,
+		(entity) => entity.$IndexKeyPropertyName_3$,
+		(entity) => entity.$IndexKeyPropertyName_4$);]]>
+			</Code>
+			<Declarations>
+				<Literal>
+					<ID>EntityType</ID>
+					<ToolTip>实体对象类型。</ToolTip>
+					<Default>EntityType</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyType_1</ID>
+					<ToolTip>第1个索引字段数据类型。</ToolTip>
+					<Default>第1个索引字段数据类型</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyPropertyName_1</ID>
+					<ToolTip>第1个索引字段数据名称。</ToolTip>
+					<Default>第1个索引字段数据名称</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyType_2</ID>
+					<ToolTip>第2个索引字段数据类型。</ToolTip>
+					<Default>第2个索引字段数据类型</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyPropertyName_2</ID>
+					<ToolTip>第2个索引字段数据名称。</ToolTip>
+					<Default>第2个索引字段数据名称</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyType_3</ID>
+					<ToolTip>第3个索引字段数据类型。</ToolTip>
+					<Default>第3个索引字段数据类型</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyPropertyName_3</ID>
+					<ToolTip>第3个索引字段数据名称。</ToolTip>
+					<Default>第3个索引字段数据名称</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyType_4</ID>
+					<ToolTip>第4个索引字段数据类型。</ToolTip>
+					<Default>第4个索引字段数据类型</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyPropertyName_4</ID>
+					<ToolTip>第4个索引字段数据名称。</ToolTip>
+					<Default>第4个索引字段数据名称</Default>
+				</Literal>
+			</Declarations>
+		</Snippet>
+	</CodeSnippet>
+
+
+	<!-- ****************************************************** -->
+	<!--                      数据唯一索引（5字段）                      -->
+	<!-- ****************************************************** -->
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>宝匣软件 服务端 数据工具 数据唯一索引（5字段）</Title>
+			<Author>宝匣软件</Author>
+			<Description>宝匣软件 服务端 数据工具 数据索引。</Description>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+			<Shortcut>BxEntityIndexWith5Keys</Shortcut>
+		</Header>
+		<Snippet>
+			<Code Language="CSharp">
+				<![CDATA[protected EntityIndexWith5Keys<$EntityType$, $IndexKeyType_1$, $IndexKeyType_2$, $IndexKeyType_3$, $IndexKeyType_4$, $IndexKeyType_5$> Index_$IndexKeyPropertyName_1$_$IndexKeyPropertyName_2$_$IndexKeyPropertyName_3$_$IndexKeyPropertyName_4$_$IndexKeyPropertyName_5$ = new(
+		(entity) => entity.$IndexKeyPropertyName_1$,
+		(entity) => entity.$IndexKeyPropertyName_2$,
+		(entity) => entity.$IndexKeyPropertyName_3$,
+		(entity) => entity.$IndexKeyPropertyName_4$,
+		(entity) => entity.$IndexKeyPropertyName_5$);]]>
+			</Code>
+			<Declarations>
+				<Literal>
+					<ID>EntityType</ID>
+					<ToolTip>实体对象类型。</ToolTip>
+					<Default>EntityType</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyType_1</ID>
+					<ToolTip>第1个索引字段数据类型。</ToolTip>
+					<Default>第1个索引字段数据类型</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyPropertyName_1</ID>
+					<ToolTip>第1个索引字段数据名称。</ToolTip>
+					<Default>第1个索引字段数据名称</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyType_2</ID>
+					<ToolTip>第2个索引字段数据类型。</ToolTip>
+					<Default>第2个索引字段数据类型</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyPropertyName_2</ID>
+					<ToolTip>第2个索引字段数据名称。</ToolTip>
+					<Default>第2个索引字段数据名称</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyType_3</ID>
+					<ToolTip>第3个索引字段数据类型。</ToolTip>
+					<Default>第3个索引字段数据类型</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyPropertyName_3</ID>
+					<ToolTip>第3个索引字段数据名称。</ToolTip>
+					<Default>第3个索引字段数据名称</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyType_4</ID>
+					<ToolTip>第4个索引字段数据类型。</ToolTip>
+					<Default>第4个索引字段数据类型</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyPropertyName_4</ID>
+					<ToolTip>第4个索引字段数据名称。</ToolTip>
+					<Default>第4个索引字段数据名称</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyType_5</ID>
+					<ToolTip>第5个索引字段数据类型。</ToolTip>
+					<Default>第5个索引字段数据类型</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyPropertyName_5</ID>
+					<ToolTip>第5个索引字段数据名称。</ToolTip>
+					<Default>第5个索引字段数据名称</Default>
+				</Literal>
+			</Declarations>
+		</Snippet>
+	</CodeSnippet>
+
+
+	<!-- ****************************************************** -->
+	<!--                      数据分组索引（1字段）                      -->
+	<!-- ****************************************************** -->
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>宝匣软件 服务端 数据工具 数据分组索引（1字段）</Title>
+			<Author>宝匣软件</Author>
+			<Description>宝匣软件 服务端 数据工具 数据索引。</Description>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+			<Shortcut>BxEntitiesIndexWith1Key</Shortcut>
+		</Header>
+		<Snippet>
+			<Code Language="CSharp">
+				<![CDATA[protected EntitiesIndexWith1Key<$EntityType$, $IndexKeyType_1$> Index_$IndexKeyPropertyName_1$ = new(
+		(entity) => entity.$IndexKeyPropertyName_1$,
+		(entityA, entityB) => entityA.Id == entityB.Id,
+		(entityA, entityB) => entityA.$OrderKeyPropertyName$.CompareTo(entityB.$OrderKeyPropertyName$));]]>
+			</Code>
+			<Declarations>
+				<Literal>
+					<ID>EntityType</ID>
+					<ToolTip>实体对象类型。</ToolTip>
+					<Default>EntityType</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyType_1</ID>
+					<ToolTip>索引字段数据类型。</ToolTip>
+					<Default>索引字段数据类型</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyPropertyName_1</ID>
+					<ToolTip>索引字段数据名称。</ToolTip>
+					<Default>索引字段数据名称</Default>
+				</Literal>
+				<Literal>
+					<ID>OrderKeyPropertyName</ID>
+					<ToolTip>默认排序字段数据名称。</ToolTip>
+					<Default>默认排序字段数据名称</Default>
+				</Literal>
+			</Declarations>
+		</Snippet>
+	</CodeSnippet>
+
+
+	<!-- ****************************************************** -->
+	<!--                      数据分组索引（2字段）                      -->
+	<!-- ****************************************************** -->
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>宝匣软件 服务端 数据工具 数据分组索引（2字段）</Title>
+			<Author>宝匣软件</Author>
+			<Description>宝匣软件 服务端 数据工具 数据索引。</Description>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+			<Shortcut>BxEntitiesIndexWith2Keys</Shortcut>
+		</Header>
+		<Snippet>
+			<Code Language="CSharp">
+				<![CDATA[protected EntitiesIndexWith2Keys<$EntityType$, $IndexKeyType_1$, $IndexKeyType_2$> Index_$IndexKeyPropertyName_1$_$IndexKeyPropertyName_2$ = new(
+		(entity) => entity.$IndexKeyPropertyName_1$,
+		(entity) => entity.$IndexKeyPropertyName_2$,
+		(entityA, entityB) => entityA.Id == entityB.Id,
+		(entityA, entityB) => entityA.$OrderKeyPropertyName$.CompareTo(entityB.$OrderKeyPropertyName$));]]>
+			</Code>
+			<Declarations>
+				<Literal>
+					<ID>EntityType</ID>
+					<ToolTip>实体对象类型。</ToolTip>
+					<Default>EntityType</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyType_1</ID>
+					<ToolTip>索引字段数据类型。</ToolTip>
+					<Default>索引字段数据类型</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyPropertyName_1</ID>
+					<ToolTip>索引字段数据名称。</ToolTip>
+					<Default>索引字段数据名称</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyType_2</ID>
+					<ToolTip>索引字段数据类型。</ToolTip>
+					<Default>索引字段数据类型</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyPropertyName_2</ID>
+					<ToolTip>索引字段数据名称。</ToolTip>
+					<Default>索引字段数据名称</Default>
+				</Literal>
+				<Literal>
+					<ID>OrderKeyPropertyName</ID>
+					<ToolTip>默认排序字段数据名称。</ToolTip>
+					<Default>默认排序字段数据名称</Default>
+				</Literal>
+			</Declarations>
+		</Snippet>
+	</CodeSnippet>
+
+
+	<!-- ****************************************************** -->
+	<!--                      数据分组索引（3字段）                      -->
+	<!-- ****************************************************** -->
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>宝匣软件 服务端 数据工具 数据分组索引（3字段）</Title>
+			<Author>宝匣软件</Author>
+			<Description>宝匣软件 服务端 数据工具 数据索引。</Description>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+			<Shortcut>BxEntitiesIndexWith3Keys</Shortcut>
+		</Header>
+		<Snippet>
+			<Code Language="CSharp">
+				<![CDATA[protected EntitiesIndexWith3Keys<$EntityType$, $IndexKeyType_1$, $IndexKeyType_2$, $IndexKeyType_3$> Index_$IndexKeyPropertyName_1$_$IndexKeyPropertyName_2$_$IndexKeyPropertyName_3$ = new(
+		(entity) => entity.$IndexKeyPropertyName_1$,
+		(entity) => entity.$IndexKeyPropertyName_2$,
+		(entity) => entity.$IndexKeyPropertyName_3$,
+		(entityA, entityB) => entityA.Id == entityB.Id,
+		(entityA, entityB) => entityA.$OrderKeyPropertyName$.CompareTo(entityB.$OrderKeyPropertyName$));]]>
+			</Code>
+			<Declarations>
+				<Literal>
+					<ID>EntityType</ID>
+					<ToolTip>实体对象类型。</ToolTip>
+					<Default>EntityType</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyType_1</ID>
+					<ToolTip>索引字段数据类型。</ToolTip>
+					<Default>索引字段数据类型</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyPropertyName_1</ID>
+					<ToolTip>索引字段数据名称。</ToolTip>
+					<Default>索引字段数据名称</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyType_2</ID>
+					<ToolTip>索引字段数据类型。</ToolTip>
+					<Default>索引字段数据类型</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyPropertyName_2</ID>
+					<ToolTip>索引字段数据名称。</ToolTip>
+					<Default>索引字段数据名称</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyType_3</ID>
+					<ToolTip>索引字段数据类型。</ToolTip>
+					<Default>索引字段数据类型</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyPropertyName_3</ID>
+					<ToolTip>索引字段数据名称。</ToolTip>
+					<Default>索引字段数据名称</Default>
+				</Literal>
+				<Literal>
+					<ID>OrderKeyPropertyName</ID>
+					<ToolTip>默认排序字段数据名称。</ToolTip>
+					<Default>默认排序字段数据名称</Default>
+				</Literal>
+			</Declarations>
+		</Snippet>
+	</CodeSnippet>
+
+
+	<!-- ****************************************************** -->
+	<!--                      数据分组索引（4字段）                      -->
+	<!-- ****************************************************** -->
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>宝匣软件 服务端 数据工具 数据分组索引（4字段）</Title>
+			<Author>宝匣软件</Author>
+			<Description>宝匣软件 服务端 数据工具 数据索引。</Description>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+			<Shortcut>BxEntitiesIndexWith4Keys</Shortcut>
+		</Header>
+		<Snippet>
+			<Code Language="CSharp">
+				<![CDATA[protected EntitiesIndexWith4Keys<$EntityType$, $IndexKeyType_1$, $IndexKeyType_2$, $IndexKeyType_3$, $IndexKeyType_4$> Index_$IndexKeyPropertyName_1$_$IndexKeyPropertyName_2$_$IndexKeyPropertyName_3$_$IndexKeyPropertyName_4$ = new(
+		(entity) => entity.$IndexKeyPropertyName_1$,
+		(entity) => entity.$IndexKeyPropertyName_2$,
+		(entity) => entity.$IndexKeyPropertyName_3$,
+		(entity) => entity.$IndexKeyPropertyName_4$,
+		(entityA, entityB) => entityA.Id == entityB.Id,
+		(entityA, entityB) => entityA.$OrderKeyPropertyName$.CompareTo(entityB.$OrderKeyPropertyName$));]]>
+			</Code>
+			<Declarations>
+				<Literal>
+					<ID>EntityType</ID>
+					<ToolTip>实体对象类型。</ToolTip>
+					<Default>EntityType</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyType_1</ID>
+					<ToolTip>索引字段数据类型。</ToolTip>
+					<Default>索引字段数据类型</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyPropertyName_1</ID>
+					<ToolTip>索引字段数据名称。</ToolTip>
+					<Default>索引字段数据名称</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyType_2</ID>
+					<ToolTip>索引字段数据类型。</ToolTip>
+					<Default>索引字段数据类型</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyPropertyName_2</ID>
+					<ToolTip>索引字段数据名称。</ToolTip>
+					<Default>索引字段数据名称</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyType_3</ID>
+					<ToolTip>索引字段数据类型。</ToolTip>
+					<Default>索引字段数据类型</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyPropertyName_3</ID>
+					<ToolTip>索引字段数据名称。</ToolTip>
+					<Default>索引字段数据名称</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyType_4</ID>
+					<ToolTip>索引字段数据类型。</ToolTip>
+					<Default>索引字段数据类型</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyPropertyName_4</ID>
+					<ToolTip>索引字段数据名称。</ToolTip>
+					<Default>索引字段数据名称</Default>
+				</Literal>
+				<Literal>
+					<ID>OrderKeyPropertyName</ID>
+					<ToolTip>默认排序字段数据名称。</ToolTip>
+					<Default>默认排序字段数据名称</Default>
+				</Literal>
+			</Declarations>
+		</Snippet>
+	</CodeSnippet>
+
+
+	<!-- ****************************************************** -->
+	<!--                      数据分组索引（5字段）                      -->
+	<!-- ****************************************************** -->
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>宝匣软件 服务端 数据工具 数据分组索引（5字段）</Title>
+			<Author>宝匣软件</Author>
+			<Description>宝匣软件 服务端 数据工具 数据索引。</Description>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+			<Shortcut>BxEntitiesIndexWith5Keys</Shortcut>
+		</Header>
+		<Snippet>
+			<Code Language="CSharp">
+				<![CDATA[protected EntitiesIndexWith5Keys<$EntityType$, $IndexKeyType_1$, $IndexKeyType_2$, $IndexKeyType_3$, $IndexKeyType_4$, $IndexKeyType_5$> Index_$IndexKeyPropertyName_1$_$IndexKeyPropertyName_2$_$IndexKeyPropertyName_3$_$IndexKeyPropertyName_4$_$IndexKeyPropertyName_5$ = new(
+		(entity) => entity.$IndexKeyPropertyName_1$,
+		(entity) => entity.$IndexKeyPropertyName_2$,
+		(entity) => entity.$IndexKeyPropertyName_3$,
+		(entity) => entity.$IndexKeyPropertyName_4$,
+		(entity) => entity.$IndexKeyPropertyName_5$,
+		(entityA, entityB) => entityA.Id == entityB.Id,
+		(entityA, entityB) => entityA.$OrderKeyPropertyName$.CompareTo(entityB.$OrderKeyPropertyName$));]]>
+			</Code>
+			<Declarations>
+				<Literal>
+					<ID>EntityType</ID>
+					<ToolTip>实体对象类型。</ToolTip>
+					<Default>EntityType</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyType_1</ID>
+					<ToolTip>索引字段数据类型。</ToolTip>
+					<Default>索引字段数据类型</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyPropertyName_1</ID>
+					<ToolTip>索引字段数据名称。</ToolTip>
+					<Default>索引字段数据名称</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyType_2</ID>
+					<ToolTip>索引字段数据类型。</ToolTip>
+					<Default>索引字段数据类型</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyPropertyName_2</ID>
+					<ToolTip>索引字段数据名称。</ToolTip>
+					<Default>索引字段数据名称</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyType_3</ID>
+					<ToolTip>索引字段数据类型。</ToolTip>
+					<Default>索引字段数据类型</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyPropertyName_3</ID>
+					<ToolTip>索引字段数据名称。</ToolTip>
+					<Default>索引字段数据名称</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyType_4</ID>
+					<ToolTip>索引字段数据类型。</ToolTip>
+					<Default>索引字段数据类型</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyPropertyName_4</ID>
+					<ToolTip>索引字段数据名称。</ToolTip>
+					<Default>索引字段数据名称</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyType_5</ID>
+					<ToolTip>索引字段数据类型。</ToolTip>
+					<Default>索引字段数据类型</Default>
+				</Literal>
+				<Literal>
+					<ID>IndexKeyPropertyName_5</ID>
+					<ToolTip>索引字段数据名称。</ToolTip>
+					<Default>索引字段数据名称</Default>
+				</Literal>
+				<Literal>
+					<ID>OrderKeyPropertyName</ID>
+					<ToolTip>默认排序字段数据名称。</ToolTip>
+					<Default>默认排序字段数据名称</Default>
+				</Literal>
+			</Declarations>
+		</Snippet>
+	</CodeSnippet>
+	
+	
+</CodeSnippets>
