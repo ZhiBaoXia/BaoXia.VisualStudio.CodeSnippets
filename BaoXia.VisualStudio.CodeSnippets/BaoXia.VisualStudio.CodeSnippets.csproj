@@ -72,7 +72,7 @@
       <IncludeInVSIX>true</IncludeInVSIX>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="BaoXia Code Snippets\BaoXia.CodeSnippets.BxResponses.snippet">
+    <Content Include="BaoXia Code Snippets\BaoXia.CodeSnippets.BxApi.snippet">
       <IncludeInVSIX>true</IncludeInVSIX>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
