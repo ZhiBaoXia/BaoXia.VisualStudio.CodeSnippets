@@ -827,6 +827,308 @@ public class DbSetMemoryCacheManageInfoService
 			</Declarations>
 		</Snippet>
 	</CodeSnippet>
-	
+
+
+
+	<!-- ****************************************************** -->
+	<!--                      唯一属性索引（1字段）                      -->
+	<!-- ****************************************************** -->
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>宝匣软件 服务端 数据工具 唯一属性索引（1字段）</Title>
+			<Author>宝匣软件</Author>
+			<Description>宝匣软件 服务端 数据工具 数据属性索引。</Description>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+			<Shortcut>BxIndexOf1Property</Shortcut>
+		</Header>
+		<Snippet>
+			<Code Language="CSharp">
+				<![CDATA[protected IndexOf1Property<$EntityType$, $PropertyType_1$> Index_$PropertyName_1$ = new(
+			nameof($EntityType$.$PropertyName_1$));]]>
+			</Code>
+			<Declarations>
+				<Literal>
+					<ID>EntityType</ID>
+					<ToolTip>实体对象类型。</ToolTip>
+					<Default>EntityType</Default>
+				</Literal>
+				<Literal>
+					<ID>PropertyType_1</ID>
+					<ToolTip>索引属性数据类型。</ToolTip>
+					<Default>索引属性数据类型</Default>
+				</Literal>
+				<Literal>
+					<ID>PropertyName_1</ID>
+					<ToolTip>索引属性数据名称。</ToolTip>
+					<Default>索引属性数据名称</Default>
+				</Literal>
+			</Declarations>
+		</Snippet>
+	</CodeSnippet>
+	<!-- ****************************************************** -->
+	<!--                      唯一属性索引（2字段）                      -->
+	<!-- ****************************************************** -->
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>宝匣软件 服务端 数据工具 唯一属性索引（2字段）</Title>
+			<Author>宝匣软件</Author>
+			<Description>宝匣软件 服务端 数据工具 数据属性索引。</Description>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+			<Shortcut>BxIndexOf2Properties</Shortcut>
+		</Header>
+		<Snippet>
+			<Code Language="CSharp">
+				<![CDATA[protected IndexOf2Properties<$EntityType$, $PropertyType_1$, $PropertyType_2$> Index_$PropertyName_1$_$PropertyName_2$ = new(
+			nameof($EntityType$.$PropertyName_1$), 
+			nameof($EntityType$.$PropertyName_2$));]]>
+			</Code>
+			<Declarations>
+				<Literal>
+					<ID>EntityType</ID>
+					<ToolTip>实体对象类型。</ToolTip>
+					<Default>EntityType</Default>
+				</Literal>
+				<Literal>
+					<ID>PropertyType_1</ID>
+					<ToolTip>索引属性数据类型。</ToolTip>
+					<Default>索引属性数据类型</Default>
+				</Literal>
+				<Literal>
+					<ID>PropertyType_2</ID>
+					<ToolTip>索引属性数据类型。</ToolTip>
+					<Default>索引属性数据类型</Default>
+				</Literal>
+				<Literal>
+					<ID>PropertyName_1</ID>
+					<ToolTip>索引属性数据名称。</ToolTip>
+					<Default>索引属性数据名称</Default>
+				</Literal>
+				<Literal>
+					<ID>PropertyName_2</ID>
+					<ToolTip>索引属性数据名称。</ToolTip>
+					<Default>索引属性数据名称</Default>
+				</Literal>
+			</Declarations>
+		</Snippet>
+	</CodeSnippet>
+	<!-- ****************************************************** -->
+	<!--                      唯一属性索引（3字段）                      -->
+	<!-- ****************************************************** -->
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>宝匣软件 服务端 数据工具 唯一属性索引（3字段）</Title>
+			<Author>宝匣软件</Author>
+			<Description>宝匣软件 服务端 数据工具 数据属性索引。</Description>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+			<Shortcut>BxIndexOf3Properties</Shortcut>
+		</Header>
+		<Snippet>
+			<Code Language="CSharp">
+				<![CDATA[protected IndexOf3Properties<$EntityType$, $PropertyType_1$, $PropertyType_2$, $PropertyType_3$> Index_$PropertyName_1$_$PropertyName_2$_$PropertyName_3$  = new(
+			nameof($EntityType$.$PropertyName_1$), 
+			nameof($EntityType$.$PropertyName_2$), 
+			nameof($EntityType$.$PropertyName_3$));]]>
+			</Code>
+			<Declarations>
+				<Literal>
+					<ID>EntityType</ID>
+					<ToolTip>实体对象类型。</ToolTip>
+					<Default>EntityType</Default>
+				</Literal>
+				<Literal>
+					<ID>PropertyType_1</ID>
+					<ToolTip>索引属性数据类型。</ToolTip>
+					<Default>索引属性数据类型</Default>
+				</Literal>
+				<Literal>
+					<ID>PropertyType_2</ID>
+					<ToolTip>索引属性数据类型。</ToolTip>
+					<Default>索引属性数据类型</Default>
+				</Literal>
+				<Literal>
+					<ID>PropertyType_3</ID>
+					<ToolTip>索引属性数据类型。</ToolTip>
+					<Default>索引属性数据类型</Default>
+				</Literal>
+				<Literal>
+					<ID>PropertyName_1</ID>
+					<ToolTip>索引属性数据名称。</ToolTip>
+					<Default>索引属性数据名称</Default>
+				</Literal>
+				<Literal>
+					<ID>PropertyName_2</ID>
+					<ToolTip>索引属性数据名称。</ToolTip>
+					<Default>索引属性数据名称</Default>
+				</Literal>
+				<Literal>
+					<ID>PropertyName_3</ID>
+					<ToolTip>索引属性数据名称。</ToolTip>
+					<Default>索引属性数据名称</Default>
+				</Literal>
+			</Declarations>
+		</Snippet>
+	</CodeSnippet>
+	<!-- ****************************************************** -->
+	<!--                      唯一属性索引（4字段）                      -->
+	<!-- ****************************************************** -->
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>宝匣软件 服务端 数据工具 唯一属性索引（4字段）</Title>
+			<Author>宝匣软件</Author>
+			<Description>宝匣软件 服务端 数据工具 数据属性索引。</Description>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+			<Shortcut>BxIndexOf4Properties</Shortcut>
+		</Header>
+		<Snippet>
+			<Code Language="CSharp">
+				<![CDATA[protected IndexOf4Properties<$EntityType$, $PropertyType_1$, $PropertyType_2$, $PropertyType_3$, $PropertyType_4$> Index_$PropertyName_1$_$PropertyName_2$_$PropertyName_3$_$PropertyName_4$ = new(
+			nameof($EntityType$.$PropertyName_1$), 
+			nameof($EntityType$.$PropertyName_2$), 
+			nameof($EntityType$.$PropertyName_3$), 
+			nameof($EntityType$.$PropertyName_4$));]]>
+			</Code>
+			<Declarations>
+				<Literal>
+					<ID>EntityType</ID>
+					<ToolTip>实体对象类型。</ToolTip>
+					<Default>EntityType</Default>
+				</Literal>
+				<Literal>
+					<ID>PropertyType_1</ID>
+					<ToolTip>索引属性数据类型。</ToolTip>
+					<Default>索引属性数据类型</Default>
+				</Literal>
+				<Literal>
+					<ID>PropertyType_2</ID>
+					<ToolTip>索引属性数据类型。</ToolTip>
+					<Default>索引属性数据类型</Default>
+				</Literal>
+				<Literal>
+					<ID>PropertyType_3</ID>
+					<ToolTip>索引属性数据类型。</ToolTip>
+					<Default>索引属性数据类型</Default>
+				</Literal>
+				<Literal>
+					<ID>PropertyType_4</ID>
+					<ToolTip>索引属性数据类型。</ToolTip>
+					<Default>索引属性数据类型</Default>
+				</Literal>
+				<Literal>
+					<ID>PropertyName_1</ID>
+					<ToolTip>索引属性数据名称。</ToolTip>
+					<Default>索引属性数据名称</Default>
+				</Literal>
+				<Literal>
+					<ID>PropertyName_2</ID>
+					<ToolTip>索引属性数据名称。</ToolTip>
+					<Default>索引属性数据名称</Default>
+				</Literal>
+				<Literal>
+					<ID>PropertyName_3</ID>
+					<ToolTip>索引属性数据名称。</ToolTip>
+					<Default>索引属性数据名称</Default>
+				</Literal>
+				<Literal>
+					<ID>PropertyName_4</ID>
+					<ToolTip>索引属性数据名称。</ToolTip>
+					<Default>索引属性数据名称</Default>
+				</Literal>
+			</Declarations>
+		</Snippet>
+	</CodeSnippet>
+	<!-- ****************************************************** -->
+	<!--                      唯一属性索引（5字段）                      -->
+	<!-- ****************************************************** -->
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>宝匣软件 服务端 数据工具 唯一属性索引（5字段）</Title>
+			<Author>宝匣软件</Author>
+			<Description>宝匣软件 服务端 数据工具 数据属性索引。</Description>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+			<Shortcut>BxIndexOf5Properties</Shortcut>
+		</Header>
+		<Snippet>
+			<Code Language="CSharp">
+				<![CDATA[protected IndexOf5Properties<$EntityType$, $PropertyType_1$, $PropertyType_2$, $PropertyType_3$, $PropertyType_4$, $PropertyType_5$> Index_$PropertyName_1$_$PropertyName_2$_$PropertyName_3$_$PropertyName_4$_$PropertyName_5$ = new(
+			nameof($EntityType$.$PropertyName_1$), 
+			nameof($EntityType$.$PropertyName_2$), 
+			nameof($EntityType$.$PropertyName_3$), 
+			nameof($EntityType$.$PropertyName_4$), 
+			nameof($EntityType$.$PropertyName_5$));]]>
+			</Code>
+			<Declarations>
+				<Literal>
+					<ID>EntityType</ID>
+					<ToolTip>实体对象类型。</ToolTip>
+					<Default>EntityType</Default>
+				</Literal>
+				<Literal>
+					<ID>PropertyType_1</ID>
+					<ToolTip>索引属性数据类型。</ToolTip>
+					<Default>索引属性数据类型</Default>
+				</Literal>
+				<Literal>
+					<ID>PropertyType_2</ID>
+					<ToolTip>索引属性数据类型。</ToolTip>
+					<Default>索引属性数据类型</Default>
+				</Literal>
+				<Literal>
+					<ID>PropertyType_3</ID>
+					<ToolTip>索引属性数据类型。</ToolTip>
+					<Default>索引属性数据类型</Default>
+				</Literal>
+				<Literal>
+					<ID>PropertyType_4</ID>
+					<ToolTip>索引属性数据类型。</ToolTip>
+					<Default>索引属性数据类型</Default>
+				</Literal>
+				<Literal>
+					<ID>PropertyType_5</ID>
+					<ToolTip>索引属性数据类型。</ToolTip>
+					<Default>索引属性数据类型</Default>
+				</Literal>
+				<Literal>
+					<ID>PropertyName_1</ID>
+					<ToolTip>索引属性数据名称。</ToolTip>
+					<Default>索引属性数据名称</Default>
+				</Literal>
+				<Literal>
+					<ID>PropertyName_2</ID>
+					<ToolTip>索引属性数据名称。</ToolTip>
+					<Default>索引属性数据名称</Default>
+				</Literal>
+				<Literal>
+					<ID>PropertyName_3</ID>
+					<ToolTip>索引属性数据名称。</ToolTip>
+					<Default>索引属性数据名称</Default>
+				</Literal>
+				<Literal>
+					<ID>PropertyName_4</ID>
+					<ToolTip>索引属性数据名称。</ToolTip>
+					<Default>索引属性数据名称</Default>
+				</Literal>
+				<Literal>
+					<ID>PropertyName_5</ID>
+					<ToolTip>索引属性数据名称。</ToolTip>
+					<Default>索引属性数据名称</Default>
+				</Literal>
+			</Declarations>
+		</Snippet>
+	</CodeSnippet>
 	
 </CodeSnippets>
