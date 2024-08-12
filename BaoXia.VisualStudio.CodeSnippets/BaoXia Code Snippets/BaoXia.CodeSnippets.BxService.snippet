@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>宝匣软件 宝匣服务 参数定义 Api基础环境参数（当前用户Id，客户端Ip信息，操作时间）</Title>
+			<Author>宝匣软件</Author>
+			<Description>宝匣软件 宝匣服务 参数定义 Api基础环境参数（当前用户Id，客户端Ip信息，操作时间）。</Description>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+			<Shortcut>BxServiceParamsDefine_CurrentUserId_ClientIpInfo_OperateTime</Shortcut>
+		</Header>
+		<Snippet>
+			<Code Language="CSharp">
+				<![CDATA[int currentUserId, 
+		ClientIpInfo clientIpInfo, 
+		DateTimeOffset operateTime]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>宝匣软件 宝匣服务 参数填充 Api基础环境参数（当前用户Id，客户端Ip信息，操作时间，null）</Title>
+			<Author>宝匣软件</Author>
+			<Description>宝匣软件 宝匣服务 参数填充 Api基础环境参数（当前用户Id，客户端Ip信息，操作时间，null）。</Description>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+			<Shortcut>BxServiceParamsFill_CurrentUserId_ClientIpInfo_OperateTime_Null</Shortcut>
+		</Header>
+		<Snippet>
+			<Code Language="CSharp">
+				<![CDATA[currentUserId,
+			clientIpInfo,
+			operateTime,
+			null]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+
+
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>宝匣软件 宝匣服务 参数填充 Api基础环境参数（当前用户Id，客户端Ip信息，当前时间）</Title>
+			<Author>宝匣软件</Author>
+			<Description>宝匣软件 Api 参数填充 Api基础环境参数（当前用户Id，客户端Ip信息，当前时间）。</Description>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+			<Shortcut>BxServiceParamsFill_CurrentUserId_ClientIpInfo_Now</Shortcut>
+		</Header>
+		<Snippet>
+			<Code Language="CSharp">
+				<![CDATA[
+				currentUserId,
+				clientIpInfo,
+				now]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>宝匣软件 宝匣服务 参数填充 Api基础环境参数（当前用户信息，客户端Ip信息，当前时间）</Title>
+			<Author>宝匣软件</Author>
+			<Description>宝匣软件 宝匣服务 参数填充 Api基础环境参数（当前用户信息，客户端Ip信息，当前时间）。</Description>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+			<Shortcut>BxServiceParamsFill_CurrentUserInfo_ClientIpInfo_Now</Shortcut>
+		</Header>
+		<Snippet>
+			<Code Language="CSharp">
+				<![CDATA[
+				currentUserInfo.Id,
+				clientIpInfo,
+				now]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>宝匣软件 宝匣服务 微服务内请求检查代码块</Title>
+			<Author>宝匣软件</Author>
+			<Description>宝匣软件 宝匣服务 微服务内请求检查代码块。</Description>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+			<Shortcut>BxService_ReturnInvalidRequestResponse</Shortcut>
+		</Header>
+		<Snippet>
+			<Code Language="CSharp">
+				<![CDATA[protectedif (request.GetErrorResonseByCheckRequest() is Response invalidRequestResponse)
+		{
+			return Json(invalidRequestResponse);
+		}]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

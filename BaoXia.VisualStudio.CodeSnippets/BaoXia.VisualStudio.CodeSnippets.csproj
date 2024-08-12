@@ -76,7 +76,15 @@
       <IncludeInVSIX>true</IncludeInVSIX>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="BaoXia Code Snippets\BaoXia.CodeSnippets.BxDataUtils.snippet">
+    <Content Include="BaoXia Code Snippets\BaoXia.CodeSnippets.BxServiceDataUtils.snippet">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="BaoXia Code Snippets\BaoXia.CodeSnippets.BxService.snippet">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="BaoXia Code Snippets\BaoXia.CodeSnippets.BxConstants.snippet">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
