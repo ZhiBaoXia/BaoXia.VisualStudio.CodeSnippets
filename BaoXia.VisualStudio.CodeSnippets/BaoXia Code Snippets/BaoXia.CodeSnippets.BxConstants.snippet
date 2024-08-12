@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>宝匣软件 宝匣常量 标准请求检查代码块</Title>
+			<Author>宝匣软件</Author>
+			<Description>宝匣软件 宝匣常量 标准请求检查代码块。</Description>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+			<Shortcut>BxConstantsFunction_DidGetErrorResonseByCheckRequest</Shortcut>
+		</Header>
+		<Snippet>
+			<Code Language="CSharp">
+				<![CDATA[protected override Response? DidGetErrorResonseByCheckRequest()
+	{
+		var errorResponse  =base.DidGetErrorResonseByCheckRequest();
+		if (errorResponse?.IsFailed == true)
+		{
+			return errorResponse;
+		}
+
+		if ($RequestProperty$ == null)
+		{
+			return new Response()
+			{
+				Error = Error.InvalidRequest,
+				ErrorDescription = $"请求无效，“{nameof($RequestProperty$)}”为“null”。"
+			};
+		}
+
+		return null;
+	}]]>
+			</Code>
+			<Declarations>
+				<Literal>
+					<ID>RequestProperty</ID>
+					<ToolTip>当前需要检查的，请求的属性名。</ToolTip>
+					<Default>RequestPropertyNeedCheck</Default>
+				</Literal>
+			</Declarations>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>
