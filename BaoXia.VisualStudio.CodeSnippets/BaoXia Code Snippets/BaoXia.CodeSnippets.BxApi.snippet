@@ -39,14 +39,14 @@
 
 	<CodeSnippet Format="1.0.0">
 		<Header>
-			<Title>宝匣软件 Api 标准响应代码结构 Api基础环境参数（用户Id）</Title>
+			<Title>宝匣软件 Api 标准参数定义 Api基础环境参数（当前用户Id，客户端Ip信息，当前时间）</Title>
 			<Author>宝匣软件</Author>
-			<Description>宝匣软件 Api 标准响应代码结构 Api基础环境参数（用户Id）。</Description>
+			<Description>宝匣软件 Api 标准参数定义 Api基础环境参数（当前用户Id，客户端Ip信息，当前时间）。</Description>
 			<SnippetTypes>
 				<SnippetType>Expansion</SnippetType>
 				<SnippetType>SurroundsWith</SnippetType>
 			</SnippetTypes>
-			<Shortcut>BxApiBaseParamsDefine_UserId</Shortcut>
+			<Shortcut>BxApiParamsDefine_CurrentUserId_ClientIpInfo_Now</Shortcut>
 		</Header>
 		<Snippet>
 			<Code Language="CSharp">
@@ -59,14 +59,14 @@
 
 	<CodeSnippet Format="1.0.0">
 		<Header>
-			<Title>宝匣软件 Api 标准响应代码结构 Api基础环境参数（用户信息）</Title>
+			<Title>宝匣软件 Api 标准参数定义 Api基础环境参数（当前用户信息，客户端Ip信息，当前时间）</Title>
 			<Author>宝匣软件</Author>
-			<Description>宝匣软件 Api 标准响应代码结构 Api基础环境参数（用户信息）。</Description>
+			<Description>宝匣软件 Api 标准参数定义 Api基础环境参数（当前用户信息，客户端Ip信息，当前时间）。</Description>
 			<SnippetTypes>
 				<SnippetType>Expansion</SnippetType>
 				<SnippetType>SurroundsWith</SnippetType>
 			</SnippetTypes>
-			<Shortcut>BxApiBaseParamsDefine_UserInfo</Shortcut>
+			<Shortcut>BxApiParamsDefine_CurrentUserInfo_ClientIpInfo_Now</Shortcut>
 		</Header>
 		<Snippet>
 			<Code Language="CSharp">
@@ -81,49 +81,6 @@
 					<Default>ServiceUserInfo</Default>
 				</Literal>
 			</Declarations>
-		</Snippet>
-	</CodeSnippet>
-
-
-	<CodeSnippet Format="1.0.0">
-		<Header>
-			<Title>宝匣软件 Api 标准响应代码结构 Api服务基础环境参数（当前用户Id）</Title>
-			<Author>宝匣软件</Author>
-			<Description>宝匣软件 Api 标准响应代码结构 Api服务基础环境参数（当前用户Id）。</Description>
-			<SnippetTypes>
-				<SnippetType>Expansion</SnippetType>
-				<SnippetType>SurroundsWith</SnippetType>
-			</SnippetTypes>
-			<Shortcut>BxApiServiceBaseParams_CurrentUserId_Now</Shortcut>
-		</Header>
-		<Snippet>
-			<Code Language="CSharp">
-				<![CDATA[
-				currentUserId,
-				clientIpInfo,
-				now]]>
-			</Code>
-		</Snippet>
-	</CodeSnippet>
-
-	<CodeSnippet Format="1.0.0">
-		<Header>
-			<Title>宝匣软件 Api 标准响应代码结构 Api服务基础环境参数（操作用户Id）</Title>
-			<Author>宝匣软件</Author>
-			<Description>宝匣软件 Api 标准响应代码结构 Api服务基础环境参数（操作用户Id）。</Description>
-			<SnippetTypes>
-				<SnippetType>Expansion</SnippetType>
-				<SnippetType>SurroundsWith</SnippetType>
-			</SnippetTypes>
-			<Shortcut>BxApiServiceBaseParams_OperatorUserId_OperateTime</Shortcut>
-		</Header>
-		<Snippet>
-			<Code Language="CSharp">
-				<![CDATA[
-				operatorUserId,
-				clientIpInfo,
-				operateTime]]>
-			</Code>
 		</Snippet>
 	</CodeSnippet>
 </CodeSnippets>
